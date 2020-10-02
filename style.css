@@ -1,3 +1,5 @@
-.card-header {
+.card {
     align-content: center;
+    padding: 15px 20px;
+    margin: 15vw;
 }
