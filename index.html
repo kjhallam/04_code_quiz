@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Reset-->
+    <!--Reset-CSS-->
     <link rel="stylesheet" href="reset.css" />
-    <!--Reset-->
+    <!--W3-CSS-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
-    <link rel="stylesheet" href="style.css" />
+    <!--My-CSS-->
+      <link rel="stylesheet" href="style.css" />
    
     <title>Javascript Code Quiz</title>
 </head>
@@ -19,8 +26,13 @@
         <h1>Coding Quiz Challenge</h1>
              <button id="start">Start</button>
              <div id="results"></div>
+              <div id='timer'></div>
+              <div id="question"></div>
+              <div id="answers">
+              
+              </div>
 
-            <h2>Code Quiz</h2>
+            <h2 id='h2'>Code Quiz</h2>
             <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
     
           <div class="card-footer">
@@ -29,7 +41,7 @@
           </div>
     </div>
     </div>
-      <script src="style.js"></script>
+      <script src="index.js"></script>
 
 </body>
 </html>
