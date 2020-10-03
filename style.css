@@ -1,17 +1,32 @@
-.card {
-    align-content: center;
-    padding: 10px 10px;
-    margin: 10vw;
-    border-width: 10px;
-    border-color: lightgray;
-    box-shadow: 5px 5px gray;
-}
-
 h1 {
     font-size: 42px;
     text-align: left;
     font-family: 'Righteous', cursive;
+    border-bottom-style: inset;
+    border-width: 1rem;
+    border-bottom: 3px;
+    border-color: lightgray;
+}
+
+.card {
+    align-content: center;
+    padding: 10px 10px;
+    margin: 3vw;
+    background-color: whitesmoke ;
+    border-width: 2px 6px 6px 2px;
+    border-color: lightgray;
+    box-shadow: 3px 3px rgb(168, 167, 167);
+    border-style: solid;
+    height: 300px;
+}
+
+#para1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    text-align: center;
+
 
 }
+
 
 

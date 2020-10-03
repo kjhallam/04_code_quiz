@@ -10,7 +10,7 @@
     <!--W3-CSS-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
     <!--Font CSS-->
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
 
     <!--My-CSS-->
       <link rel="stylesheet" href="style.css" />
@@ -19,21 +19,19 @@
 </head>
 
 <body>
-  <main class="container panel rounded-border">
+  <main class="container">
     <header class="row">
-      <div class="col-xs"></div>
       <h1>quizzinator</h1>
-
-    
+    </header>
+    <div class="col-xs"></div>
       <div id="timer">Time</div>
       <div id="score">High Score</div>
-    </header>
 
     <section class="card">
 
       <div class="quiz"></div>
-           <button id="start">Start</button>
-              <div id="results">Score</div>
+      <div class="col-xs"></div>
+              <div id="results"></div>
         
               <div id="question"></div>
               <div id="answers"></div>
@@ -41,6 +39,7 @@
             <p id="para1">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
     
           <div class="card-footer">
+            <button id="start">Start</button>
             <button id="back">Back</button>
             <button id="submit">Submit</button>
           </div>
