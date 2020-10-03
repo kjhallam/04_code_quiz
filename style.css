@@ -1,8 +1,17 @@
 .card {
     align-content: center;
-    padding: 15px 20px;
-    margin: 15vw;
-    border-width: 30px;
-    border: rgb(122, 123, 124);
-    box-shadow: rgb(67, 68, 68);
+    padding: 10px 10px;
+    margin: 10vw;
+    border-width: 10px;
+    border-color: lightgray;
+    box-shadow: 5px 5px gray;
 }
+
+h1 {
+    font-size: 42px;
+    text-align: left;
+    font-family: 'Righteous', cursive;
+
+}
+
+

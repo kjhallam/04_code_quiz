@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
     <!--W3-CSS-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
-    
+    <!--Font CSS-->
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
     <!--My-CSS-->
       <link rel="stylesheet" href="style.css" />
    
@@ -17,15 +19,22 @@
 </head>
 
 <body>
+  <main class="container panel rounded-border">
+    <header class="row">
+      <div class="col-xs"></div>
+      <h1>quizzinator</h1>
 
-  <main class="card">
-    <section class="container">
+    
+      <div id="timer">Time</div>
+      <div id="score">High Score</div>
+    </header>
+
+    <section class="card">
 
       <div class="quiz"></div>
-        <h1 id="quizTitle">Coding Quiz Challenge</h1>
-             <button id="start">Start</button>
+           <button id="start">Start</button>
               <div id="results">Score</div>
-              <div id='timer'></div>
+        
               <div id="question"></div>
               <div id="answers"></div>
 
