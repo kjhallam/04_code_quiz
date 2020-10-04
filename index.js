@@ -6,15 +6,21 @@
     var timer = 60
     var questions = [
         {
-            question: 'Why is the sky blue?',
-            answers: [ 'reflection of the ocean', 'Ozone releases blue light when heated', 'Because God loves the infantry'],
-            correct: 'Ozone releases blue light when heated'
+            question: 'What is Javascript?',
+            answers: [ 'content', 'design', 'functionality'],
+            correct: 'functionality'
         },
         {
-            question: 'What is the meaning of life?',
-            answers: ['to be happy', 'to code in javascript', 'undefined'],
-            correct: 'undefined'
-        }
+            question: 'What is the correct way to identify a variable in Javascript?',
+            answers: ['johnny on the spot', 'var i = 0 ', 'var i - 0'],
+            correct: 'var i = 0'
+        },
+
+    {
+        question: 'You can use a function as (a)...',
+        answers: ['declaration', 'expression ', 'both'],
+        correct: 'both'
+    }
     ]
 
     var index = 0;
@@ -43,6 +49,8 @@
            }
 
     }
+
+
 
 
 
