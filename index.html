@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Reset-CSS-->
     <link rel="stylesheet" href="reset.css" />
-    <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
-    <!--W3-CSS-->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
-    <!--Font CSS-->
+    <!-- Bootstrap CSS-->
+     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>  -->
+
+    
+    <!--Font CSS -->
 <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
 
     <!--My-CSS-->
@@ -20,42 +20,36 @@
 
 <body>
  
-     <header class="row">
+     <header>
        <h1 class= "quiz-title">[QW] QuizWiz</h1>
-         <p class="para1">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+         <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
      </header>
   
      <main class="container">
        <div id="quest-container" class="hide"></div>
         <div id="question">Questions</div>
-          <section id="answer-buttons" class="btn-grid">
+      <section id="answers" class="btn-grid">
         <button class="btn">Answer 1</button>
         <button class="btn">Answer 2</button>
         <button class="btn">Answer 3</button>
-     </section>
+      </section>
 
      <section class="control-center">
-       <button id="start" class="btn-start btn">Start</button>
-       <button id="back" class="btn-back btn hide">Back</button>
-       <button id="next" class=""btn-next btn hide">Next</button>
+       <button id="start" class="start-btn btn">Start</button>
+       <button id="submit" class="submit-btn btn">Submit</button>
+       <div id="results"></div>
+    
+      <div id="timer"></div>
+      <div id="score"></div>
      </section>
-
-    <div id="timer"></div>
-    <div id="score"></div>
             
-            <button id="submit">Submit</button>
-            <div id="results"></div>
-      
-      </div>
-    </div>
-  </section>
+           
+
 </main>
 
       <script src="script.js"></script>
-      
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+      <script src="test.js"></script>
+     
 
 </body>
 </html>

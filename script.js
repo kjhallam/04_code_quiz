@@ -4,7 +4,7 @@
 
 
     var timer = 60
-    var questions = [
+    var myQuestions = [
         {
             question: 'What is Javascript?',
             answers: [ 'content', 'design', 'functionality'],
@@ -31,6 +31,7 @@
     var timerEl = document.getElementById('timer')
     var questionEl = document.getElementById('question')
     var answersEl = document.getElementById('answers')
+    var scoreEl = document.getElementById ('score')
 
     
     function startQuiz() {
