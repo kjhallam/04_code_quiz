@@ -1,28 +1,45 @@
-.jumbotron {
-    background-color: white;
-    width: 100%;
+body {
+        background-color: whitesmoke;
+        font-family: 'Righteous', cursive;
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+        width: 100vw;  
+        height: 100vw;
+        align-items: center;
+        display: -ms-flexbox;
+}
+
+h1.quiz-title {
+    background-color:gainsboro;
+    margin: 10px 15px;
+    padding: 10px;
+    border-bottom: 10px solid hotpink;
+    box-shadow: 0px 5px;
+    width: 100vw;
     font-size: 42px;
-    text-emphasis-color: coral;
-    justify-content: left;
+    text-align: left;
     font-family: 'Righteous', cursive;
     
 }
-.card {
-    align-content: center;
-    padding: 2px;
-    margin: 1px;
-    background-color: white ;
-    border-width: 2px 6px 6px 2px;
-    border-color: lightgray;
-    box-shadow: 3px 3px rgb(168, 167, 167);
-    border-style: solid;
-    height: 300px;
+
+.container {
+    width: 1200px;
+    max-width: 80%;
+    height: 200px;
+    background-color:lightgray;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0px 0px 12px 4px;
+
 }
 
-#para1 {
+p.para1 {
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     text-align: center;
+    box-shadow: gray;
+
 }
 
 

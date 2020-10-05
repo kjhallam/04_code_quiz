@@ -25,8 +25,7 @@
 
     var index = 0;
 
-
-    var startBtn = document.querySelector('#start');
+    var startBtn = document.getElementById('start');
     var resultsEl = document.getElementById('results')
     var h2el = document.getElementById('h2')
     var timerEl = document.getElementById('timer')

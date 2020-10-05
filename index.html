@@ -19,38 +19,39 @@
 </head>
 
 <body>
-  <main class="container">
-    <header class="row">
-      <nav>
-      <div id="timer"></div>
-      <div id="score"></div>
-      </nav>
-      <h1 class= "jumbotron">Q-wiz/code</h1>
-    </header>
-    <div class="col-xs"></div>
-     
-    <section class="card">
+ 
+     <header class="row">
+       <h1 class= "quiz-title">[QW] QuizWiz</h1>
+         <p class="para1">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+     </header>
+  
+     <main class="container">
+       <div id="quest-container" class="hide"></div>
+        <div id="question">Questions</div>
+          <section id="answer-buttons" class="btn-grid">
+        <button class="btn">Answer 1</button>
+        <button class="btn">Answer 2</button>
+        <button class="btn">Answer 3</button>
+     </section>
 
-      <div class="quiz"></div>
-      <div class="col-xs"></div>
-              <div id="results"></div>
-        
-              <div id="question"></div>
-              <div id="answers"></div>
+     <section class="control-center">
+       <button id="start" class="btn-start btn">Start</button>
+       <button id="back" class="btn-back btn hide">Back</button>
+       <button id="next" class=""btn-next btn hide">Next</button>
+     </section>
 
-            <p id="para1">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-    
-          <div class="card-footer">
-            <button id="start">Start</button>
-            <button id="back">Back</button>
+    <div id="timer"></div>
+    <div id="score"></div>
+            
             <button id="submit">Submit</button>
-          </div>
+            <div id="results"></div>
+      
       </div>
     </div>
   </section>
 </main>
 
-      <script src="index.js"></script>
+      <script src="script.js"></script>
       
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
