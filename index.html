@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--bootstrap 4-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-
+    <!--Reset-CSS-->
+    <link rel="stylesheet" href="reset.css" />
+    <!-- Bootstrap CSS-->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+      <!--Font CSS -->
+      <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
+      <!--My-CSS-->
+      <link rel="stylesheet" href="style.css" />
+   
     <title>Javascript Code Quiz</title>
 </head>
 <body>
@@ -18,14 +23,16 @@
         <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
     
         <p>Click "start" to begin!</p>
-        <button id="startBtn" class="btn btn-secondary btn-lg" >Start</button>
     </section>
-
+    <main class="container">
+        <button id="startBtn" class="btn btn-secondary btn-lg">Start</button>
+    
+   
     <section id="quiz" class="col">
         <p class="timer">Time: <span id="time-set">60</span></p>
         <p class="text-questions">Question: <span id="questions"></span></p>
             <div class="col" id="answer-buttons">
-               <button type="button" class="btn btn-secondary btn" id="btnA">Answer1</button>
+               <button type="button" class="btn btn-secondary btn center" id="btnA">Answer1</button>
                <button type="button" class="btn btn-secondary btn" id="btnB">Answer2</button>
                <button type="button" class="btn btn-secondary btn" id="btnC">Answer3</button>
             </div>
@@ -58,7 +65,8 @@
                 <h2>Try Again!</h2>
                 <button type="button" class="btn btn-secondary btn-lg" id="restart">Restart</button>
         </section>
-    
+    </main>
+
         <script src="./script.js"></script>
   
 </body>

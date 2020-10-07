@@ -29,17 +29,17 @@ var myQuestions = [{
    
         question: 'What is Javascript?',
         answer: ['A. content', 'B. design', 'C.functionality'],
-        correct: 'C.functionality'
+        correct: 2
     },
 {
         question: 'What is the correct way to identify a variable in Javascript?',
         answer: ['A. var 2 | 0', 'B. var i = 0', 'C. var i - 0'],
-        correct: 'B. var i = 0'
-    },
+        correct: 1
+        },
 {
         question: 'You can use a function as (a)...',
         answer: ['A. declaration', 'B. expression ', 'C. all of the above'],
-        correct: 'C. all of the above'
+        correct: 2
 }
 ];
 
@@ -110,7 +110,7 @@ function showAnswers (num) {
         timeSet -= 10
         currentQ++;
         nextQuestion(currentQ);
-
+        
         }
 } 
 
@@ -146,8 +146,23 @@ startButton.addEventListener('click', beginQuiz);
 buttonA.addEventListener('click', 
     function (){
         showAnswers(0);
+        if (num === myQuestions
+            [currentQ].correct)
+            {
+            responseEl.style.display = "block";
+            responseEl.textContent = "CORRECT!";
+    
+            setTimesup (responseElHide, 1000)
+            timeSet -= 10
+            currentQ++;
+            nextQuestion(currentQ);
+            
+            }
+        })
+             
 
-})
+
+
 buttonB.addEventListener('click',
 function (){
     showAnswers(1)
