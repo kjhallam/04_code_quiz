@@ -1,67 +1,178 @@
 
-// Click the start button
-    // Timer starts (for loop to countdown and remove time off the clock if answer is   incorrect)
+var timerElement = document.getElementById ('time-set');
+var startButton = document.getElementById('startBtn');
+var startEl= document.getElementById('starter');
+var quizEl = document.getElementById('quiz');
+var questionElement = document.getElementById('questions');
+var buttonA = document.getElementById('btnA');
+var buttonB = document.getElementById('btnB');
+var buttonC = document.getElementById('btnC');
+var resultEl = document.getElementById('results');
+var submit = document.getElementById('submit');
+var initialText = document.getElementById('initials');
+var highScore = document.getElementById('high-score');
+var scoreForm = document.getElementById('score-form');
+var scoreList = document.getElementById('score-list');
+var reStart = document.getElementById('restart');
+var loseEl = document.getElementById('loser');
+var responseEl = document.getElementById('response');
 
+var topScoreCount = 0;
+var topScores = [];
+var timeInterval;
+var countDown = 60;
 
-    var timer = 60
-    var myQuestions = [
-        {
-            question: 'What is Javascript?',
-            answers: [ 'content', 'design', 'functionality'],
-            correct: 'functionality'
-        },
-        {
-            question: 'What is the correct way to identify a variable in Javascript?',
-            answers: ['johnny on the spot', 'var i = 0 ', 'var i - 0'],
-            correct: 'var i = 0'
-        },
+var currentQ = 0;
+var currentScore = 0;
 
-    {
+var myQuestions = [{
+   
+        question: 'What is Javascript?',
+        answer: ['A. content', 'B. design', 'C.functionality'],
+        correct: 'C.functionality'
+    },
+{
+        question: 'What is the correct way to identify a variable in Javascript?',
+        answer: ['A. var 2 | 0', 'B. var i = 0', 'C. var i - 0'],
+        correct: 'B. var i = 0'
+    },
+{
         question: 'You can use a function as (a)...',
-        answers: ['declaration', 'expression ', 'both'],
-        correct: 'both'
+        answer: ['A. declaration', 'B. expression ', 'C. all of the above'],
+        correct: 'C. all of the above'
+}
+];
+
+
+quizEl.style.display = "none";
+resultEl.style.display = "none";
+loseEl.style.display = "none";
+
+function setTime() {
+    timeInterval = setInterval(function () {
+        if (countDown <= 1) {
+            clearInterval(timeInterval);
+            countDown = 0;
+            quizEl.style.display = "none";
+            loseEl.style.display = "block";
+        }
+        countDown--;
+        timerElement.textContent = countDown;
+    }, 1000);
+}
+
+function nextQuestion (currentQ) {
+    if (currentQ === myQuestions.length) {
+        score = timeSet;
+        timerElement.textContent ="60";
+        clearInterval(timeInterval);
+        renderScoreForm ();
+        quizEl.style.display = "none";
+        resultEl.style.display = "block";
     }
-    ]
+    else {
+        questionElement.textContent = myQuestions[i].question
+        buttonA.textContent = myQuestions[i].answer[0]
+        buttonB.textContent = myQuestions[i].answer[1]
+        buttonC.textContent = myQuestions[i].answer[2]     
+    }
+}
 
-    var index = 0;
+function renderScoreForm () {
+    for (var i = 0; i < topScores.length; i++){
+        var li = document.createElement('li');
+        li.setAttribute('data-index', i);
+        li.innerHTML = topScores[i];
+        scoreList.appendChild(li);
+    } 
+}
 
-    var startBtn = document.getElementById('start');
-    var resultsEl = document.getElementById('results')
-    var h2el = document.getElementById('h2')
-    var timerEl = document.getElementById('timer')
-    var questionEl = document.getElementById('question')
-    var answersEl = document.getElementById('answers')
-    var scoreEl = document.getElementById ('score')
 
-    
-    function startQuiz() {
-        setInterval(function() {
-            timer--
-            timerEl.innerHTML = timer
-           }, 1000)
+function beginQuiz() {
+    console.log('click');
+    startEl.style.display = "none";
+    quizEl.style.display = "block";
+    setTime();
+    nextQuestion(currentQ)
+} 
 
-           var currentQuestion = questions[index].question
-           var answers = question[index].answers
-           questionEl.innerHTML = currentQuestion
+var i = 0;
 
-           for(var i = 0; i < questions[index].answers; i++){
-        //loop through the answers array and add buttons with info
-           }
 
+function showAnswers (num) {
+    if (num === myQuestions
+        [currentQ].correct)
+        {
+        responseEl.style.display = "block";
+        responseEl.textContent = "CORRECT!";
+
+        setTimesup (responseElHide, 1000)
+        timeSet -= 10
+        currentQ++;
+        nextQuestion(currentQ);
+
+        }
+} 
+
+function responseElHide () {
+    responseEl.style.display = "none"
+} 
+
+
+// top scores to local storage
+function placeScore () {
+    localStorage.setItem ('placeScore', JSON.stringify(topScores))
+}
+
+
+function addScore () {
+    var totalScore = 'Player: ' + initialText.value.trim() + '' + score
+    if (!totalScore) {
+        return false;
     }
 
 
+    topScores.push(topScores);
+    initialText.value = '';
+    placeScore();
+    renderScoreForm ();
+}
+
+topScores = JSON.parse(localStorage.getItem("placeScore")) || [];
 
 
+startButton.addEventListener('click', beginQuiz);
 
-    startBtn.addEventListener('click', startQuiz)
-    
+buttonA.addEventListener('click', 
+    function (){
+        showAnswers(0);
 
+})
+buttonB.addEventListener('click',
+function (){
+    showAnswers(1)
+})
+buttonC.addEventListener('click',
+function (){
+    showAnswers(2)
+})
+submit.addEventListener('click', addScore);
 
-//---ARRAY of Questions (series of questions & answers)
-    //I am presented with a question 
-    // answer questions (display correct or wrong)
-        // time is subtracted - from the clock
-// all questions are answered or the timer reaches 0
-// the game is over
-// THEN I can save my initials and score
+reStart.addEventListener('click', 
+function () {
+    currentQ = 0;
+    score = 0;
+    timeSet = 60;
+    resultEl.style.display = "none";
+    beginQuiz ();
+})
+
+loseEl.addEventListener('click', function (){
+    currentQ = 0;
+    score = 0;
+    timeSet = 60;
+    loseEl.style.display = "none";
+    timerElement.textContent = "60";
+    clearInterval(timeInterval);
+    beginQuiz ();
+})

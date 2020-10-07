@@ -3,53 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Reset-CSS-->
-    <link rel="stylesheet" href="reset.css" />
-    <!-- Bootstrap CSS-->
-     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>  -->
+    <!--bootstrap 4-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    
-    <!--Font CSS -->
-<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,400;1,100&display=swap" rel="stylesheet">
 
-    <!--My-CSS-->
-      <link rel="stylesheet" href="style.css" />
-   
     <title>Javascript Code Quiz</title>
 </head>
-
 <body>
- 
-     <header>
-       <h1 class= "quiz-title">[QW] QuizWiz</h1>
-         <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-     </header>
-  
-     <main class="container">
-       <div id="quest-container" class="hide"></div>
-        <div id="question">Questions</div>
-      <section id="answers" class="btn-grid">
-        <button class="btn">Answer 1</button>
-        <button class="btn">Answer 2</button>
-        <button class="btn">Answer 3</button>
-      </section>
 
-     <section class="control-center">
-       <button id="start" class="start-btn btn">Start</button>
-       <button id="submit" class="submit-btn btn">Submit</button>
-       <div id="results"></div>
+        <h1 class= "quiz-title" >[QW] QuizWiz</h1>
+
+    <section id="starter" class="col">
+        <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
     
-      <div id="timer"></div>
-      <div id="score"></div>
-     </section>
-            
-           
+        <p>Click "start" to begin!</p>
+        <button id="startBtn" class="btn btn-secondary btn-lg" >Start</button>
+    </section>
 
-</main>
+    <section id="quiz" class="col">
+        <p class="timer">Time: <span id="time-set">60</span></p>
+        <p class="text-questions">Question: <span id="questions"></span></p>
+            <div class="col" id="answer-buttons">
+               <button type="button" class="btn btn-secondary btn" id="btnA">Answer1</button>
+               <button type="button" class="btn btn-secondary btn" id="btnB">Answer2</button>
+               <button type="button" class="btn btn-secondary btn" id="btnC">Answer3</button>
+            </div>
+    </section>
+        
+        <div>
+            <h3 id="response"></h3>
+        </div>
 
-      <script src="script.js"></script>
-      <script src="test.js"></script>
-     
+        <div id="results" class="col">
+            <h3>Good Job!!!! Enter your initials.</h3>
+            <section>
+                <form>
+                    <input type="text" class="form-control" id="initials" name="initials"
+                        placeholder="Enter initials here">
+                    <input type="submit" class="btn btn-secondary btn-lg" id="submit" value="Submit">
+                </form>
+            </section>
+        </div>
+          
+        <section id="high-score">
+            <h2>Top Scores</h2>
+                <form id="score-form">
+                <ul id="score-list"></ul>
+                </form>
+        </section>
 
+        <section id="loser" class="col">
+                <h2>Times Up!</h2>
+                <h2>Try Again!</h2>
+                <button type="button" class="btn btn-secondary btn-lg" id="restart">Restart</button>
+        </section>
+    
+        <script src="./script.js"></script>
+  
 </body>
 </html>
