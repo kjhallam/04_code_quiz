@@ -19,22 +19,23 @@
 
         <h1 class= "quiz-title" >[QW] QuizWiz</h1>
 
+<main class="container">
     <section id="starter" class="col">
         <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
     
         <p>Click "start" to begin!</p>
     </section>
-    <main class="container">
-        <button id="startBtn" class="btn btn-secondary btn-lg">Start</button>
+    
+        <button id="startBtn" class="btn btn-secondary">Start</button>
     
    
     <section id="quiz" class="col">
         <p class="timer">Time: <span id="time-set">60</span></p>
         <p class="text-questions">Question: <span id="questions"></span></p>
-            <div class="col" id="answer-buttons">
-               <button type="button" class="btn btn-secondary btn center" id="btnA">Answer1</button>
-               <button type="button" class="btn btn-secondary btn" id="btnB">Answer2</button>
-               <button type="button" class="btn btn-secondary btn" id="btnC">Answer3</button>
+            <div class="col"           id="answer-buttons">
+               <button type="button" class="btn btn-secondary" id="btnA">Answer1</button>
+               <button type="button" class="btn btn-secondary" id="btnB">Answer2</button>
+               <button type="button" class="btn btn-secondary" id="btnC">Answer3</button>
             </div>
     </section>
         
@@ -45,11 +46,12 @@
         <div id="results" class="col">
             <h3>Good Job!!!! Enter your initials.</h3>
             <section>
-                <form>
+                <form class="col-md-6">
                     <input type="text" class="form-control" id="initials" name="initials"
-                        placeholder="Enter initials here">
+                        placeholder="Enter initials">
+                    <br><br>
                     <input type="submit" class="btn btn-secondary btn-lg" id="submit" value="Submit">
-                </form>
+                </form>            
             </section>
         </div>
           
@@ -63,7 +65,7 @@
         <section id="loser" class="col">
                 <h2>Times Up!</h2>
                 <h2>Try Again!</h2>
-                <button type="button" class="btn btn-secondary btn-lg" id="restart">Restart</button>
+                <button type="button" class="btn btn-secondary" id="restart">Restart</button>
         </section>
     </main>
 

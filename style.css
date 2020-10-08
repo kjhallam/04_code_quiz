@@ -4,76 +4,58 @@
     padding: 0px;
 }
 body {
-        font-family: 'Righteous', cursive; 
-        width: 100vw;  
-        height: 100vw;
-    
-
+        font-family: 'Righteous', cursive;
+        margin: 20px;  
+        justify-content: center;
+        align-items: center;  
+        align-content: center;    
 }
+
 
 header {
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     padding: 0;
     margin: 0px;
-
 }
 
 p {
-    margin: 40px 20px;
+    margin: 10px;
+    padding: 5px;
     text-align: center;
     font-size: 30px;
 }
 
 h1.quiz-title {
     background-color:gainsboro;
-    margin: 0px 15px;
-    padding: 10px;
+    margin: 30px;
+    padding: 30px;
     border-bottom: 10px solid hotpink;
     box-shadow: 0px 3px;
-    width: 100vw;
+    width: 80vw;
     font-size: 42px;
-    text-align: center;
+    text-align: left;
     font-family: 'Righteous', cursive;
 }
 
 .container {
-    margin-left: 30rem;
-    width: 800px;
-    max-width: 85%;
-    height: 400px;
-    background-color:whitesmoke;
-    border-radius: 8px;
-    padding: 0;
-    margin-top: 30px;
+    align-content: center;
     justify-content: center;
-    box-shadow: 0px 0px 12px 4px;
+    margin: 10px; 
+    padding: 10px;
 }
-
-
-.start-btn, .submit-btn {
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 12px 25px;
-    margin: 3rem;
-}
-
-.control-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 5rem;
-}
-
-.btn-grid {
-    gap: 8px;
-    margin: 30px 0px;
-    display: grid;
-    justify-content: center;
+#startBtn, #btnA, #btnB, #btnC, #submit, #restart {
+    font-family: 'Roboto', sans-serif;
+    width: 50vw;
     font-size: 24px;
+    padding: 30px;
+    margin: 30px;
+    align-content: space-between;
+    justify-content: center;
+    align-content: center;
 
+   
 }
-
 
 
 
