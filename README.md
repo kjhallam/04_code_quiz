@@ -6,8 +6,8 @@ https://kjhallam.github.io/04_code_quiz/
 <i> GitHub </i>: https://github.com/kjhallam/04_code_quiz.git
 
 __________________________
-## About: 
-____
+## About:
+__________________________
 The web application is used to test ones knowledge of javascript.
 There is a list of (3) multiple choice questions about javascript within the quiz. If you get them right or correct you will enter your initials located with in the final deployed page or also known as the submit page.
 
@@ -34,7 +34,7 @@ WHEN the game is over
 THEN I can save my initials and score
 __________________________
 Image:
-![StartQuiz](quizwiz(startpg).jpg)
+![StartQuiz layout](images/quizwiz(startpg).jpg)
 __________________________
 ## Resources:
 __________________________

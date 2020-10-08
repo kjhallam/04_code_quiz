@@ -67,6 +67,14 @@ function setTime() {
     }, 1000);
 }
 
+function beginQuiz() {
+    console.log('click');
+    startEl.style.display = "none";
+    quizEl.style.display = "block";
+    setTime();
+    nextQuestion(currentQ)
+} 
+
 function nextQuestion (currentQ) {
     startButton.style.display = "none"
     if (currentQ < myQuestions.length) {
@@ -77,6 +85,8 @@ function nextQuestion (currentQ) {
     } else {
     
          score = timeSet;
+         timerElement.textContent ="60";
+         clearInterval(timeInterval);
          renderScoreForm ();
          quizEl.style.display = "none";
          startEl.style.display = "none";
@@ -94,16 +104,6 @@ function renderScoreForm () {
     } 
 }
 
-function beginQuiz() {
-    console.log('click');
-    startEl.style.display = "none";
-    quizEl.style.display = "block";
-    setTime();
-    nextQuestion(currentQ)
-} 
-
-var i = 0;
-
 
 function showAnswers (num) {
     if (num === myQuestions[currentQ].correct)
@@ -117,10 +117,15 @@ function showAnswers (num) {
         
         } else {
             (num != myQuestions[currentQ].correct)
-            {
+           {
         responseEl.style.display = "block";
         responseEl.textContent = "WRONG!";
-            }
+        
+        setTimesup -= 30;
+        currentQ++;
+        nextQuestion(currentQ);
+        }
+        
         }
 } 
 
@@ -180,11 +185,12 @@ submit.addEventListener('click', function(event) {
 })
 
 reStart.addEventListener('click', 
-function () {
-    currentQ = 0;
-    score = 0;
-    timeSet = 60;
-    resultEl.style.display = "none";
+function (event) {
+event.preventDefault
+    // currentQ = 0;
+    // score = 0;
+    // timeSet = 60;
+    // resultEl.style.display = "none";
     beginQuiz ();
 })
 

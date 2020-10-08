@@ -25,10 +25,8 @@
     
         <p>Click "start" to begin!</p>
     </section>
-    
         <button id="startBtn" class="btn btn-secondary">Start</button>
     
-   
     <section id="quiz" class="col">
         <p class="timer">Time: <span id="time-set">60</span></p>
         <p class="text-questions">Question: <span id="questions"></span></p>
@@ -37,27 +35,25 @@
                <button type="button" class="btn btn-secondary" id="btnB">Answer2</button>
                <button type="button" class="btn btn-secondary" id="btnC">Answer3</button>
             </div>
-    </section>
         
         <div>
-            <h3 id="response"></h3>
+            <h3><span id="response"></span></h3>
         </div>
+    </section>
 
-        <div id="results" class="col">
+        <section id="results" class="col">
             <h3>Good Job!!!! Enter your initials.</h3>
-            <section>
                 <form class="col-md-6">
-                    <input type="text" class="form-control" id="initials" name="initials"
+                    <input type="text" class="form-control form-control-md" id="initials" name="initials"
                         placeholder="Enter initials">
                     <br><br>
                     <input type="submit" class="btn btn-secondary btn-lg" id="submit" value="Submit">
                 </form>            
             </section>
-        </div>
           
         <section id="high-score">
-            <h2>Top Scores</h2>
-                <form id="score-form">
+            <h2>Top Scores :</h2>
+                <form id="score-form method="POST">
                 <ul id="score-list"></ul>
                 </form>
         </section>
