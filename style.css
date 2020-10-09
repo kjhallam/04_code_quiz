@@ -2,6 +2,7 @@
     background-color: transparent;
     margin: 0px;
     padding: 0px;
+    align-content: center;
 }
 body {
         font-family: 'Righteous', cursive;
@@ -40,8 +41,8 @@ h1.quiz-title {
 
 .container {
     justify-content: center;
-    align-content: flex;
-    -moz-box-align: center;
+    align-content: center;
+    align-items: center;
     margin: 0; 
     padding: 0;
 }

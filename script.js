@@ -24,8 +24,6 @@ var countDown = 60;
 var score = 0;
 
 var currentQ = 0;
-var currentScore = 0;
-var setTimesup = 0;
 var timeSet = 0;
 
 loadTopScores();
@@ -51,6 +49,7 @@ var myQuestions = [{
 
 quizEl.style.display = "none";
 resultEl.style.display = "none";
+highScore.style.display = "none";
 loseEl.style.display = "none";
 
 function setTime() {
@@ -63,6 +62,8 @@ function setTime() {
 
         }
         countDown--;
+        countDown < 0;
+        loseEl.style.display ="Quiz Over";
         timerElement.textContent = countDown;
     }, 1000);
 }
@@ -95,13 +96,13 @@ function nextQuestion (currentQ) {
 }
 
 
-function showAnswers (num) {
+function checkAnswer (num) {
     if (num === myQuestions[currentQ].correct)
         {
         responseEl.style.display = "block";
         responseEl.textContent = "CORRECT!";
+        addScore();
 
-        setTimesup -= 10;
         currentQ++;
         nextQuestion(currentQ);
         
@@ -110,8 +111,9 @@ function showAnswers (num) {
            {
         responseEl.style.display = "block";
         responseEl.textContent = "WRONG!";
-        
-        setTimesup -= 30;
+        clearInterval(timeInterval);
+        countDown -= 20;
+        setTime ();
         currentQ++;
         nextQuestion(currentQ);
         }
@@ -124,7 +126,6 @@ function responseElHide () {
 } 
 
 function renderScoreForm () {
-    console.log("I am in render score.")
     for (var i = 0; i < topScores.length; i++){
         var li = document.createElement('li');
         li.setAttribute('data-index', i);
@@ -139,44 +140,29 @@ function placeScore () {
     
 }
 
-function addScore (event) {
-    //correct 
-    // add to score
-
-    // if wrong
-    //  check from remaining time & subtract time 20sec
-    // if 0 game over
-    // if > 0 allow time to answer question
-
-    // if time is remaining -- if correct - if false remain on the question
-    // render the next question -- if wrong and times up restart game
-    
-
-//     event.preventDefault ()
-//     var totalScore = Player:  + initialText.value.trim() +  + score
-//     if (!totalScore) {
-//         return false;
-//     }
-// }
-//     var totalScore = "Player: " + initialText.value.trim() + "" + score
-//         console.log("score function");
-//     var user = {
-//         user: initialText.value.trim(),
-//         score: score
-//     }
-
-//     topScores.push(user);
-//     initialText.value = "";
-//     placeScore();
-//     renderScoreForm();
-
-
-function loadTopScores() {
- var storedTopScores = JSON.parse(localStorage.getItem("placeScore"));
- if (storedTopScores !== null) {
-     topScores = storedTopScores;
- }
+function addScore () {
+        score++;
 }
+
+    
+function loadTopScores() {
+    var storedTopScores = JSON.parse(localStorage.getItem("placeScore"));
+    if (storedTopScores !== null) {
+        topScores = storedTopScores;
+    }
+    var user = {
+        user: initialText.value.trim(),
+        score: score
+    }
+
+    topScores.push(user);
+    initialText.value = "";
+    placeScore();
+    renderScoreForm();
+
+   }
+   
+
 
 
 
@@ -184,20 +170,21 @@ startButton.addEventListener('click', beginQuiz);
 
 buttonA.addEventListener('click', 
     function (){
-        showAnswers(2);
+        checkAnswer(2);
         })
 
 buttonB.addEventListener('click',
 function (){
-    showAnswers(1)
+    checkAnswer(1)
 })
 buttonC.addEventListener('click',
 function (){
-    showAnswers(2)
+    checkAnswer(2)
 })
 
 submit.addEventListener('click', function(event) {
-  event.preventDefault
+  event.preventDefault;
+highScore.style.display ="block";
   addScore();
 })
 
