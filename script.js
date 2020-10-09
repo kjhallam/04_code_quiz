@@ -34,17 +34,17 @@ var myQuestions = [{
    
         question: 'What is Javascript?',
         answer: ['A. content', 'B. design', 'C. functionality'],
-        correct: 3
+        correct: 2
     },
 {
         question: 'What is the correct way to identify a variable in Javascript?',
         answer: ['A. var 2 | 0', 'B. var i = 0', 'C. var i - 0'],
-        correct: 2
+        correct: 1
         },
 {
         question: 'You can use a function as (a)...',
         answer: ['A. declaration', 'B. expression ', 'C. all of the above'],
-        correct: 3
+        correct: 2
 }
 ];
 
@@ -94,16 +94,6 @@ function nextQuestion (currentQ) {
      }
 }
 
-function renderScoreForm () {
-    console.log("I am in render score.")
-    for (var i = 0; i < topScores.length; i++){
-        var li = document.createElement('li');
-        li.setAttribute('data-index', i);
-        li.innerHTML = topScores[i];
-        scoreList.appendChild(li);
-    } 
-}
-
 
 function showAnswers (num) {
     if (num === myQuestions[currentQ].correct)
@@ -133,50 +123,77 @@ function responseElHide () {
     responseEl.style.display = "none"
 } 
 
+function renderScoreForm () {
+    console.log("I am in render score.")
+    for (var i = 0; i < topScores.length; i++){
+        var li = document.createElement('li');
+        li.setAttribute('data-index', i);
+        li.innerHTML = `name: ${topScores[i].user}   score:  ${topScores[i].score}`;
+        scoreList.appendChild(li);
+    } 
+}
+
+
 function placeScore () {
     localStorage.setItem ("placeScore", JSON.stringify(topScores));
     
 }
 
-function addScore () {
-    var totalScore = 'Player: ' + initialText.value.trim() + '' + score
-    if (!totalScore) {
-        return false;
-    }
-    var totalScore = 'Player: ' + initialText.value.trim() + '' + score
-        console.log("score function");
-    var user = {
-        user: initialText.value.trim(),
-        score: score
-    }
+function addScore (event) {
+    //correct 
+    // add to score
 
-    topScores.push(user);
-    initialText.value = '';
-    placeScore();
-    renderScoreForm ();
-}
+    // if wrong
+    //  check from remaining time & subtract time 20sec
+    // if 0 game over
+    // if > 0 allow time to answer question
+
+    // if time is remaining -- if correct - if false remain on the question
+    // render the next question -- if wrong and times up restart game
+    
+
+//     event.preventDefault ()
+//     var totalScore = Player:  + initialText.value.trim() +  + score
+//     if (!totalScore) {
+//         return false;
+//     }
+// }
+//     var totalScore = "Player: " + initialText.value.trim() + "" + score
+//         console.log("score function");
+//     var user = {
+//         user: initialText.value.trim(),
+//         score: score
+//     }
+
+//     topScores.push(user);
+//     initialText.value = "";
+//     placeScore();
+//     renderScoreForm();
+
 
 function loadTopScores() {
-var storedTopScores = JSON.parse(localStorage.getItem("placeScore"));
+ var storedTopScores = JSON.parse(localStorage.getItem("placeScore"));
  if (storedTopScores !== null) {
      topScores = storedTopScores;
  }
 }
 
+
+
 startButton.addEventListener('click', beginQuiz);
 
 buttonA.addEventListener('click', 
     function (){
-        showAnswers(3);
+        showAnswers(2);
         })
 
 buttonB.addEventListener('click',
 function (){
-    showAnswers(2)
+    showAnswers(1)
 })
 buttonC.addEventListener('click',
 function (){
-    showAnswers(3)
+    showAnswers(2)
 })
 
 submit.addEventListener('click', function(event) {
@@ -187,10 +204,10 @@ submit.addEventListener('click', function(event) {
 reStart.addEventListener('click', 
 function (event) {
 event.preventDefault
-    // currentQ = 0;
-    // score = 0;
-    // timeSet = 60;
-    // resultEl.style.display = "none";
+    currentQ = 0;
+    score = 0;
+    timeSet = 60;
+    resultEl.style.display = "none";
     beginQuiz ();
 })
 
