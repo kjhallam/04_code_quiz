@@ -107,7 +107,7 @@ function checkAnswer (num) {
         nextQuestion(currentQ);
         
         } else {
-            (num != myQuestions[currentQ].correct)
+        (num != myQuestions[currentQ].correct)
            {
         responseEl.style.display = "block";
         responseEl.textContent = "WRONG!";
@@ -115,10 +115,13 @@ function checkAnswer (num) {
         countDown -= 20;
         setTime ();
         currentQ++;
-        nextQuestion(currentQ);
+        nextQuestion(currentQ);   
         }
+         
+     }
+     
         
-        }
+       
 } 
 
 function responseElHide () {
@@ -163,34 +166,30 @@ function loadTopScores() {
    }
    
 
-
-
-
 startButton.addEventListener('click', beginQuiz);
 
 buttonA.addEventListener('click', 
     function (){
-        checkAnswer(2);
+        checkAnswer(0);
         })
 
 buttonB.addEventListener('click',
 function (){
-    checkAnswer(1)
+    checkAnswer(1);
 })
 buttonC.addEventListener('click',
 function (){
-    checkAnswer(2)
+    checkAnswer(2);
 })
 
 submit.addEventListener('click', function(event) {
-  event.preventDefault;
+event.preventDefault ()
 highScore.style.display ="block";
   addScore();
 })
 
 reStart.addEventListener('click', 
-function (event) {
-event.preventDefault
+function () {
     currentQ = 0;
     score = 0;
     timeSet = 60;
@@ -202,7 +201,7 @@ loseEl.addEventListener('click', function (){
     currentQ = 0;
     score = 0;
     timeSet = 60;
-    loseEl.style.display = "none";
+    loseEl.style.display = "block";
     timerElement.textContent = "60";
     clearInterval(timeInterval);
     beginQuiz ();
