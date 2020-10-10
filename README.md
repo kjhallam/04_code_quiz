@@ -1,9 +1,9 @@
 # QuizWiz
 __________________________
-<i> Website </i>:
-https://kjhallam.github.io/04_code_quiz/
+<i> Website </i>: https://kjhallam.github.io/04_code_quiz/
 
-<i> GitHub </i>: https://github.com/kjhallam/04_code_quiz.git
+
+<i> GitHub </i>: https://github.com/kjhallam/04_Code_Quiz.git
 
 __________________________
 ## About:
